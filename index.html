@@ -50,7 +50,9 @@
 	  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
 	  ga('create', 'UA-49014968-1', 'akshatmittal.github.io');
-	  ga('send', 'pageview');
+	  ga('send', 'pageview', {
+ 			'page': location.pathname + location.search  + location.hash
+	  });
 	</script>
 	<script type="text/javascript">
 	var url = location.hash.slice(2);
@@ -64,8 +66,11 @@
 			}, 2500);
 		}
 	} else {
-		if(url != "")
-			alert("Location blocked. Read Limits.");
+		if(url != "") {
+			window.onload = function() {
+				alert("Location blocked. Read Limits.");	
+			}
+		}
 	}
 	</script>
 </head>
