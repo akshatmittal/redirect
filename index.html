@@ -48,7 +48,7 @@
 	if(url.substring(0,4) == "http") {
 		window.onload = function(e) {
 			var el = document.getElementById('zero');
-			el.innerText = "Redirecting...";
+			el.innerHTML = "Redirecting...";
 			el.style.display = "block";
 			setTimeout(function() {
 				location.replace(url);
